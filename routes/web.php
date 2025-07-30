@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LombaController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -17,4 +18,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/lomba', [LombaController::class, 'index'])->name('lomba.index');
+Route::get('/lomba/create', [LombaController::class, 'create'])->name('lomba.create');
+Route::post('/lomba', [LombaController::class, 'store'])->name('lomba.store');
+Route::get('/lomba/{id}', [LombaController::class, 'show'])->name('lomba.show');
+Route::get('/lomba/{id}/syarat', [LombaController::class, 'syarat'])->name('lomba.syarat');
 require __DIR__.'/auth.php';
