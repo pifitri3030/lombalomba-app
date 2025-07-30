@@ -16,15 +16,12 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
 
             <!-- Page Heading -->
             @isset($header)
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
+                <header class="flex justify-between items-center px-6 py-4 bg-white/60 shadow-md sticky top-0 backdrop-blur-md z-50">
+            <h1 class="text-2xl font-bold text-indigo-600" style="color : #8ABB6C" >LombaKita</h1>
+</header>
             @endisset
 
             <!-- Page Content -->
